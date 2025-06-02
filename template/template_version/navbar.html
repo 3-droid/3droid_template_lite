@@ -1,0 +1,140 @@
+<style>
+    /* Streamlit 整合優化 */
+    div[data-testid="stAppViewContainer"] {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        gap: 0;
+        overflow-y: auto;
+    }
+
+    header[data-testid="stHeader"] {
+        display: none;
+    }
+
+    .block-container {
+        padding: 3.5rem 0 !important;
+        max-width: 60% !important;
+        overflow-y: auto;
+    }
+
+    .main .block-container {
+        overflow: auto;
+    }
+
+    .stApp {
+        height: 100%;
+        overflow: auto;
+    }
+
+    /* 導航欄深色主題樣式 */
+    .navbar {
+        background-color: #1a1a1a;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 下拉選單深色主題 */
+    .dropdown-menu {
+        background-color: #242424 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        min-width: 210px !important;  /* 調整寬度 */
+        width: auto !important;
+        padding: 1rem !important;
+    }
+
+    /* 會籍資訊卡片樣式 */
+    .membership-info {
+        color: rgba(255, 255, 255, 0.85) !important;
+        width: 100% !important;
+    }
+
+    .membership-info p {
+        color: rgba(255, 255, 255, 0.85) !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 1rem !important;
+    }
+
+    .membership-info p strong {
+        color: #ffffff !important;
+        margin-right: 0.5rem !important;
+    }
+
+    /* 下拉選單顯示控制 */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        background-color: #242424 !important;
+    }
+
+    .dropdown-menu {
+        margin-top: 0;
+        background-color: #242424 !important;
+    }
+
+    /* 強制覆蓋 Bootstrap 的背景色 */
+    .dropdown-menu, 
+    .dropdown-menu * {
+        background-color: #242424 !important;
+    }
+</style>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="{{ navbar.logo.link }}">
+            <img src="{{ navbar.logo.image_path }}" alt="{{ navbar.logo.alt_text }}" height="{{ navbar.logo.height }}">
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button title="{{ navbar.toggle_button.title }}" class="navbar-toggler" type="button"
+            onclick="document.getElementById('navbarNav').classList.toggle('show')">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                {% for item in navbar.menu_items %}
+                {% if item.type == 'link' %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.link }}">{{ item.text }}</a>
+                </li>
+                {% elif item.type == 'dropdown' %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ item.link }}" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{ item.text }}
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="px-3 py-2">
+                            <div class="membership-info">
+                                {% for info in item.dropdown_content %}
+                                <p class="{{ 'mb-0' if loop.last else 'mb-2' }}"><strong>{{ info.label }}：</strong> {{ info.value }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+

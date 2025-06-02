@@ -1,0 +1,35 @@
+.DS_Store
+
+# ignore build/dist folder
+/dist
+/build
+
+# ignore node_modules folder
+/node_modules
+
+# ignore .env file
+.env
+venv
+other_material
+# egg-info
+*.egg-info
+
+__pycache__/
+utils/__pycache__
+utils/bot_usage.py
+utils/db_github_and_bot.py
+test.py
+backup/
+
+pages/create_bot.py
+pages/github_invite.py
+pages/manage_bot.py
+
+discord_bot/
+
+stock_analysis.py
+load_css.py
+test.html
+firebase-credentials.json
+main1.py
+README_V1.md

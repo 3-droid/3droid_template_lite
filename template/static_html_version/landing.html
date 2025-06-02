@@ -1,0 +1,359 @@
+<style>
+  /* Streamlit 整合優化 */
+  div[data-testid="stMainBlockContainer"],
+  div[data-testid="stVerticalBlock"] {
+    padding: 0;
+    gap: 0;
+  }
+
+  header[data-testid="stHeader"] {
+    display: none;
+  }
+
+  .block-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/">
+      <img src="app/static/logo-white.png" alt="三卓科技" height="20">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" title="Toggle Navigation"
+      onclick="document.getElementById('navbarNav').classList.toggle('show')">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Menu Items -->
+      <ul class="navbar-nav nav-menu me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#feature">特色</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#demo">體驗</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pricing">方案</a>
+        </li>
+      </ul>
+
+      <!-- Right Button -->
+      <ul class="navbar-nav nav-button">
+        <li class="nav-item">
+          <a class="nav-link btn cta-button text-white px-3" href="/app">
+            <i class="bi bi-magic text-white me-1"></i>開始使用
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<section class="hero-section" id="home">
+  <!-- 背景影片 -->
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://video.wixstatic.com/video/d85ba0_1b6af75440af442ca04de60b2cced3a1/1080p/mp4/file.mp4" type="video/mp4">
+  </video>
+  
+  <!-- 遮罩層 -->
+  <div class="image-overlay"></div>
+  
+  <!-- 內容 -->
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="hero-heading">輕鬆建立輕量級軟體服務<br>Micro SaaS</h1>
+
+      <div class="mt-5">
+        <a href="/app" class="cta-button white">
+          立即體驗<i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 服務特色區 -->
+
+ 
+  <section id="feature" class="section-starter">
+    <div class="container">
+      <div class="section-title">
+        <h2>服務特色</h2>
+        <h4 class="subtitle">結合專業工具，一站式解決方案</h4>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Framework -->
+        <div class="col-md-7">
+          <div class="feature-box">
+            <h3 class="feature-title">
+              <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" class="feature-icon" alt="Streamlit Logo">
+              Framework
+            </h3>
+            <p class="feature-text">
+              Streamlit 開發框架提供快速搭建具備原生 Python 支援的互動式數據應用，同時確保即時視覺化呈現與自動響應式設計。
+            </p>
+          </div>
+        </div>
+        
+        <!-- Database -->
+        <div class="col-md-5">
+          <div class="feature-box">
+            <h3 class="feature-title">
+              <img src="https://static.wixstatic.com/shapes/d85ba0_0228d36f955d4626932241b66e636e8b.svg" class="feature-icon" alt="Firebase Logo">
+              Database
+            </h3>
+            <p class="feature-text">
+              Firebase 資料庫提供完整的使用者資訊管理方案，整合認證資訊、點數追蹤、使用紀錄與自動備份功能。
+            </p>
+          </div>
+        </div>
+        
+        <!-- UI Components -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3 class="feature-title">
+              <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" class="feature-icon" alt="Bootstrap Logo">
+              UI Components
+            </h3>
+            <p class="feature-text">
+              Bootstrap 元件系統實現快速開發響應式網頁，提供豐富的現成範例並支援靈活客製化與快速部署。
+            </p>
+          </div>
+        </div>
+        
+        <!-- Authentication -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3 class="feature-title">
+              <img src="https://oauth.net/images/oauth-logo-square.png" class="feature-icon" alt="OAuth Logo">
+              Authentication
+            </h3>
+            <p class="feature-text">
+              OIDC 整合驗證系統透過 OAuth 2.0 協定實現 Patreon 單一登入，確保令牌管理與身份驗證的安全性。
+            </p>
+          </div>
+        </div>
+        
+        <!-- Subscription -->
+        <div class="col-md-4">
+          <div class="feature-box">
+            <h3 class="feature-title">
+              <img src="https://static.wixstatic.com/shapes/d85ba0_12751a4a145f404eac406fa668d45d3a.svg" class="feature-icon" alt="Patreon Logo">
+              Subscription
+            </h3>
+            <p class="feature-text">
+              Patreon 會員系統實現多層級會員權限管理，自動化訂閱流程並精確控制點數配額與權限同步。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="divider-glow"></div>
+<!-- 體驗demo區 -->
+
+<section id="demo" class="section-starter">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="demo-heading">Streamlit+ AI 驅動<br>快速生成器</h2>
+ 
+ <div class="demo-img-wrap demo-img-wrap--cycles"><img src="app/static/cycles.webp" height="1028" width="2168" class="demo-img"></div>
+      </div>
+
+      <h3 class="main-title">專注於開發您的 Streamlit 應用，會員管理與金流就交給我們！</h3>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="benefit-item">
+            <h4 class="benefit-title">
+              <i class="fas fa-robot benefit-icon"></i>
+              AI 智慧解析
+            </h4>
+            <p class="benefit-description">
+              一鍵上傳設計圖，GPT Vision 立即分析版面結構和元件配置。
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="benefit-item">
+            <h4 class="benefit-title">
+              <i class="fas fa-code benefit-icon"></i>
+              即時程式轉換
+            </h4>
+            <p class="benefit-description">
+              自動將設計圖轉換為最佳化的 Streamlit 程式碼，支援完整組件庫。
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="benefit-item">
+            <h4 class="benefit-title">
+              <i class="fas fa-eye benefit-icon"></i>
+              實時預覽功能
+            </h4>
+            <p class="benefit-description">
+              程式碼生成的同時提供即時預覽，所見即所得。
+            </p>
+          </div>
+        </div>
+  
+    
+      <div class="cta-buttons-demo">
+        <a class="cta-button white" href="/app">
+          <i class="bi bi-magic text-white me-1"></i>試用AI生成器</a>
+          <a class="cta-button-class" href="/app">
+           線上教學</a>
+      
+ 
+    
+    </div>
+  </section>
+
+
+
+
+  <div class="divider-glow"></div>
+
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">選擇你的方案</h2>
+      
+      <div class="row">
+        <!-- 免費版 -->
+        <div class="col-md-4 mb-4">
+          <div class="pricing-card">
+            <h3>免費版</h3>
+            <div class="price">
+              $0 <small>/月</small>
+            </div>
+            <div class="ai-quota">每月 1 次 AI 生成額度</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i>基礎版面配置範本</li>
+              <li><i class="fas fa-check"></i>社群分享功能</li>
+              <li><i class="fas fa-check"></i>基礎程式碼優化</li>
+            </ul>
+            <div class="button-wrapper">
+              <a href="https://www.patreon.com/c/3droid/membership" class="btn btn-outline w-100">開始使用</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 基礎版 -->
+        <div class="col-md-4 mb-4">
+          <div class="pricing-card popular">
+            <span class="popular-badge">最受歡迎</span>
+            <h3>基礎版</h3>
+            <div class="price">
+              $0.99 <small>/月</small>
+            </div>
+            <div class="ai-quota">每月 10 次 AI 生成額度</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i>進階版面配置範本</li>
+              <li><i class="fas fa-check"></i>優先佇列處理</li>
+              <li><i class="fas fa-check"></i>進階程式碼優化</li>
+              <li><i class="fas fa-check"></i>自訂風格設定</li>
+            </ul>
+            <div class="button-wrapper">
+              <a href="https://www.patreon.com/checkout/3droid?rid=24160455" class="btn btn-gradient w-100">立即升級</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 進階版 -->
+        <div class="col-md-4 mb-4">
+          <div class="pricing-card">
+            <h3>進階版</h3>
+            <div class="price">
+              $9.99 <small>/月</small>
+            </div>
+            <div class="ai-quota">每月 50 次 AI 生成額度</div>
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i>獨家高級版面範本</li>
+              <li><i class="fas fa-check"></i>最高優先處理</li>
+              <li><i class="fas fa-check"></i>AI 進階優化建議</li>
+              <li><i class="fas fa-check"></i>API 存取權限</li>
+              <li><i class="fas fa-check"></i>專屬技術支援</li>
+            </ul>
+            <div class="button-wrapper">
+              <a href="https://www.patreon.com/checkout/3droid?rid=24203522" class="btn btn-outline w-100">立即升級</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<div class="divider-glow"></div>
+
+<!-- FAQ Section -->
+<section class="container py-5">
+  <div class="faq-section">
+    <div class="container">
+      <h2 class="section-title">常見問題</h2>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <details class="faq-item">
+            <summary>什麼是 Micro-SaaS？</summary>
+            <div class="faq-content">
+              Micro-SaaS 是一種專注於解決特定領域問題的小型軟體服務。這類服務通常由個人或小型團隊運營，
+              具有低維護成本但高利潤率的特點。由於其規模較小且專注，非常適合作為副業或小型創業項目的選擇。
+              這種模式讓創業者能夠以較低的風險切入市場，同時保持靈活性和效率。
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>為什麼選用 Streamlit？</summary>
+            <div class="faq-content">
+              Streamlit 是一個極具優勢的開發框架，它提供了極低的開發門檻，特別適合快速驗證商業想法。
+              它完全支援 Python 生態系統，並提供豐富的內建資料視覺化工具。更重要的是，Streamlit 提供自動響應式設計，
+              讓開發者無需具備前端開發經驗就能創建專業的網頁應用。此外，它的部署過程簡單直接，並支援多種雲端服務整合，
+              大幅降低了開發和維護的複雜度。
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>為什麼要串接 Patreon 來管理會員與金流系統？</summary>
+            <div class="faq-content">
+              選擇串接 Patreon 作為會員和金流管理系統是一個策略性的決定。這樣做可以讓我們避免自行開發複雜的金流系統，
+              同時獲得一個成熟的會員訂閱機制。Patreon 提供完整的國際化支付解決方案和會員管理後台，
+              這不僅大幅降低了開發和維護成本，還能確保系統的穩定性和安全性。透過使用現有的成熟平台，
+              我們可以將更多精力集中在核心產品的開發上。
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>需要具備什麼程度的技術基礎？</summary>
+            <div class="faq-content">
+              要開始使用我們的系統，你需要具備基礎的 Python 程式設計能力，以及對 HTML/CSS 有基本的理解。
+              同時，具備資料庫的基礎認知也會對開發過程有所幫助。不過最重要的是要有持續學習的熱情和動力，
+              因為技術總是在不斷進步。我們的平台設計理念是降低技術門檻，讓更多人能夠參與開發，
+              因此即使你是初學者，只要願意學習，也能逐步掌握所需的技能。
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

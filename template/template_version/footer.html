@@ -1,0 +1,17 @@
+<!-- FOOTER -->
+<div class="container-fluid">
+    <footer class="py-4 container">
+        <!-- SOCIAL MEDIA -->
+        <div class="social mb-4">
+            {% for social in footer.social_links %}
+            <a href="{{ social.url }}" class="social-card" aria-label="{{ social.name }}">
+                <i class="bi bi-{{ social.icon }}"></i>
+            </a>
+            {% endfor %}
+        </div>
+
+        <p class="text-center text-light">
+            <img src="{{ footer.logo.src }}" alt="{{ footer.logo.alt }}" id="footer-logo"> 
+        </p>
+    </footer>
+</div>

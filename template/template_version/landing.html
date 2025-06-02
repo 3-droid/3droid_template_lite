@@ -1,0 +1,202 @@
+<style>
+  /* Streamlit 整合優化 */
+  div[data-testid="stMainBlockContainer"],
+  div[data-testid="stVerticalBlock"] {
+    padding: 0;
+    gap: 0;
+  }
+
+  header[data-testid="stHeader"] {
+    display: none;
+  }
+
+  .block-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="{{ landing.navbar.logo.link }}">
+      <img src="{{ landing.navbar.logo.image_path }}" alt="{{ landing.navbar.logo.alt_text }}" height="{{ landing.navbar.logo.height }}">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" title="{{ landing.navbar.toggle_button.title }}"
+      onclick="document.getElementById('navbarNav').classList.toggle('show')">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Menu Items -->
+      <ul class="navbar-nav nav-menu me-auto">
+        {% for item in landing.navbar.left_menu_items %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ item.link }}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Right Button -->
+      <ul class="navbar-nav nav-button">
+        <li class="nav-item">
+          <a class="nav-link btn cta-button text-white px-3" href="{{ landing.navbar.cta_button.link }}">
+            <i class="{{ landing.navbar.cta_button.icon }} text-white me-1"></i>{{ landing.navbar.cta_button.text }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-section" id="{{ landing.hero.section_id }}">
+  <!-- 背景影片 -->
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="{{ landing.hero.video.source }}" type="{{ landing.hero.video.type }}">
+  </video>
+  
+  <!-- 遮罩層 -->
+  <div class="image-overlay"></div>
+  
+  <!-- 內容 -->
+  <div class="hero-content">
+    <div class="container">
+      <h1 class="hero-heading">{{ landing.hero.heading | safe }}</h1>
+
+      <div class="mt-5">
+        <a href="{{ landing.hero.cta_button.link }}" class="cta-button white">
+          {{ landing.hero.cta_button.text }}<i class="{{ landing.hero.cta_button.icon }}"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 服務特色區 -->
+<section id="{{ landing.feature.section_id }}" class="section-starter">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ landing.feature.title }}</h2>
+      <h4 class="subtitle">{{ landing.feature.subtitle }}</h4>
+    </div>
+    
+    <div class="row g-4">
+      {% for item in landing.feature.list_item %}
+      <div class="col-md-{{ item.column_width }}">
+        <div class="feature-box">
+          <h3 class="feature-title">
+            <img src="{{ item.icon_url }}" class="feature-icon" alt="{{ item.icon_alt }}">
+            {{ item.title }}
+          </h3>
+          <p class="feature-text">
+            {{ item.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="divider-glow"></div>
+
+<!-- 體驗demo區 -->
+<section id="{{ landing.demo.section_id }}" class="section-starter">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="demo-heading">{{ landing.demo.heading | safe }}</h2>
+      <div class="demo-img-wrap demo-img-wrap--cycles">
+        <img src="{{ landing.demo.image.src }}" height="{{ landing.demo.image.height }}" width="{{ landing.demo.image.width }}" class="demo-img">
+      </div>
+    </div>
+
+    <h3 class="main-title">{{ landing.demo.main_title }}</h3>
+    
+    <div class="row">
+      {% for benefit in landing.demo.benefits %}
+      <div class="col-md-4">
+        <div class="benefit-item">
+          <h4 class="benefit-title">
+            <i class="{{ benefit.icon_class }} benefit-icon"></i>
+            {{ benefit.title }}
+          </h4>
+          <p class="benefit-description">
+            {{ benefit.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="cta-buttons-demo">
+      {% for button in landing.demo.cta_buttons %}
+      <a class="{{ button.class }}" href="{{ button.link }}">
+        {% if button.icon %}
+        <i class="{{ button.icon }} text-white me-1"></i>
+        {% endif %}
+        {{ button.text }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="divider-glow"></div>
+<!-- 會員計畫區 -->
+<section class="pricing-section" id="{{ landing.pricing.section_id }}">
+  <div class="container">
+    <h2 class="section-title">{{ landing.pricing.title }}</h2>
+    
+    <div class="row">
+      {% for plan in landing.pricing.plans %}
+      <div class="col-md-4 mb-4">
+        <div class="pricing-card{% if plan.is_popular %} popular{% endif %}">
+          {% if plan.is_popular %}
+          <span class="popular-badge">{{ plan.popular_badge_text }}</span>
+          {% endif %}
+          <h3>{{ plan.name }}</h3>
+          <div class="price">
+            {{ plan.price }} <small>{{ plan.price_period }}</small>
+          </div>
+          <div class="ai-quota">{{ plan.ai_quota }}</div>
+          <ul class="feature-list">
+            {% for feature in plan.features %}
+            <li><i class="{{ landing.pricing.feature_icon }}"></i>{{ feature }}</li>
+            {% endfor %}
+          </ul>
+          <div class="button-wrapper">
+            <a href="{{ plan.button.link }}" class="{{ plan.button.class }}">{{ plan.button.text }}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<div class="divider-glow"></div>
+
+<!-- FAQ Section -->
+<section class="container py-5">
+  <div class="faq-section">
+    <div class="container">
+      <h2 class="section-title">{{ landing.faq.title }}</h2>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          {% for item in landing.faq.faq_items %}
+          <details class="faq-item">
+            <summary>{{ item.question }}</summary>
+            <div class="faq-content">
+              {{ item.answer }}
+            </div>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

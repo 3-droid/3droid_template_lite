@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="section-title">{{ service_term.title }}</h1>
+    <p class="subtitle">{{ service_term.last_updated }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.acceptance.title }}</div>
+    <p class="feature-text">{{ service_term.sections.acceptance.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.description.title }}</div>        
+    <p class="feature-text">{{ service_term.sections.description.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.account.title }}</div>
+    <p class="feature-text">{{ service_term.sections.account.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.subscription.title }}</div>
+    <p class="feature-text">{{ service_term.sections.subscription.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.behavior.title }}</div>
+    <p class="feature-text">{{ service_term.sections.behavior.intro }}</p>
+    <ul class="feature-text">
+        {% for item in service_term.sections.behavior.list_items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <div class="h4">{{ service_term.sections.intellectual_property.title }}</div>
+    <p class="feature-text">{{ service_term.sections.intellectual_property.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.disclaimer.title }}</div>
+    <p class="feature-text">{{ service_term.sections.disclaimer.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.limitation.title }}</div>
+    <p class="feature-text">{{ service_term.sections.limitation.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.modification.title }}</div>
+    <p class="feature-text">{{ service_term.sections.modification.content }}</p>
+    <br>
+    <div class="h4">{{ service_term.sections.contact.title }}</div>
+    <p class="feature-text">{{ service_term.sections.contact.content }}</p>
+    <br>
+    <p class="text-center">
+    <a href="{{ service_term.return_button.link }}" class="cta-button">{{ service_term.return_button.text }}</a>
+    </p>
+</div>
