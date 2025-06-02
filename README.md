@@ -2,19 +2,39 @@
 
 ## 步驟 1：下載並安裝專案
 
-1. **下載專案檔案**：
-   - 從 3Droid 官網下載免費版模板包
-   - 解壓縮到您想要的資料夾
+### 1.1 克隆專案到本機
+```bash
+git clone https://github.com/3-droid/3droid_template_lite.git
 
-2. **開啟終端機並進入專案目錄**：
-   ```bash
-   cd 3droid_template_free_v1.0
-   ```
+cd 3droid_template_lite
+```
 
-3. **安裝相依套件**：
-   ```bash
-   pip install -r requirements.txt
-   ```
+或者
+
+### 1.2 下載 ZIP 檔案
+- 點擊 GitHub 頁面上的綠色 "Code" 按鈕
+- 選擇 "Download ZIP"
+- 解壓縮到您想要的資料夾
+- 開啟終端機並進入專案目錄：
+  ```bash
+  cd 3droid_template_lite
+  ```
+
+### 1.3 建立虛擬環境（建議）
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+```
+
+### 1.4 安裝相依套件
+```bash
+pip install -r requirements.txt
+```
 
 ## 步驟 2：快速體驗前端介面
 
@@ -31,7 +51,6 @@ streamlit run Home.py
 > - 您可以瀏覽所有頁面和介面設計
 > - 適合了解系統架構和前端設計
 
-
 ## 步驟 3：客製化前端介面
 
 ### 3.1 了解 Helper 功能
@@ -41,9 +60,6 @@ streamlit run Home.py
 - `load_landing_page()`: 載入首頁 HTML 內容  
 - `load_footer()`: 載入頁尾 HTML 內容
 - `generate_navbar()`: 動態生成導航欄
-
-看了您的 helper 程式碼，我現在完全理解了！讓我重新修正說明：
-
 
 ### 3.2 客製化網頁內容的兩種方式
 
