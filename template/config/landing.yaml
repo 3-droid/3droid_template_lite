@@ -3,150 +3,154 @@ landing:
     logo:
       link: /
       image_path: https://dummyimage.com/120x40/ffffff/333333&text=LOGO
-      alt_text: '[您的公司名稱]'
+      alt_text: "[Your Company Name]"
       height: '20'
     toggle_button:
       title: Toggle Navigation
     left_menu_items:
     - link: '#home'
-      text: '[選單項目1]'
+      text: "[Menu Item 1]"
     - link: '#feature'
-      text: '[選單項目2]'
+      text: "[Menu Item 2]"
     - link: '#demo'
-      text: '[選單項目3]'
+      text: "[Menu Item 3]"
     - link: '#pricing'
-      text: '[選單項目4]'
+      text: "[Menu Item 4]"
     cta_button:
       link: /app
       icon: bi bi-magic
-      text: '[CTA按鈕]'
+      text: "[CTA Button]"
       class: btn btn-primary
   hero:
     section_id: home
     video:
       source: app/static/Placeholder_Video.mp4
       type: video/mp4
-    heading: 簡潔的標題描述您產品的<br><span class="text-primary">核心價值</span>
-    subtitle: 描述性內容來說明您的產品是什麼。
+    heading: Concise headline describing your product's<br><span class="text-primary">core value</span>
+    subtitle: "Descriptive content explaining what your product is."
     cta_button:
       link: /app
-      text: '[主要CTA按鈕]'
+      text: "[Primary CTA Button]"
       icon: bi bi-chevron-right
       class: btn btn-primary btn-lg
   feature:
     section_id: feature
-    title: '[功能特色標題]'
-    subtitle: '[功能特色副標題描述]'
+    title: "[Feature Highlights Title]"
+    subtitle: "[Feature highlights subtitle description]"
     list_item:
     - column_width: '7'
       icon_url: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/icons/lightning-charge.svg
       icon_alt: Lightning Fast Performance
-      title: '[快速效能]'
-      description: '[在此描述您的第一個核心功能特色，說明它如何為使用者帶來價值...]'
+      title: "[Lightning Fast]"
+      description: "[Describe your first core feature here, explaining how it brings value to users...]"
     - column_width: '5'
       icon_url: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/icons/shield-check.svg
       icon_alt: Security Protection
-      title: '[安全防護]'
-      description: '[在此描述您的第二個核心功能特色，突出其獨特優勢...]'
+      title: "[Security Protection]"
+      description: "[Describe your second core feature here, highlighting its unique advantages...]"
     - column_width: '4'
       icon_url: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/icons/gear.svg
       icon_alt: Easy Configuration
-      title: '[簡易設定]'
-      description: '[在此描述您的第三個功能特色，展現技術優勢...]'
+      title: "[Easy Setup]"
+      description: "[Describe your third feature here, showcasing technical advantages...]"
     - column_width: '4'
       icon_url: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/icons/people.svg
       icon_alt: Team Collaboration
-      title: '[團隊協作]'
-      description: '[在此描述您的第四個功能特色，強調安全性或便利性...]'
+      title: "[Team Collaboration]"
+      description: "[Describe your fourth feature here, emphasizing security or convenience...]"
     - column_width: '4'
       icon_url: https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/icons/graph-up.svg
       icon_alt: Analytics Dashboard
-      title: '[數據分析]'
-      description: '[在此描述您的第五個功能特色，說明商業價值...]'
+      title: "[Data Analytics]"
+      description: "[Describe your fifth feature here, explaining business value...]"
   demo:
     section_id: demo
-    heading: '[產品展示標題]<br>[副標題說明]'
+    heading: "[Product Demo Title]<br>[Subtitle Description]"
     image:
       src: https://dummyimage.com/800x600/cccccc/333333&text=Replace+Demo+Image
       height: '1028'
       width: '2168'
-      alt: 產品展示圖片
-    main_title: '[在此放置您的主要產品說明，描述核心價值主張！]'
+      alt: "Product demo image"
+    main_title: "[Place your main product description here, describing your core value proposition!]"
     benefits:
     - icon_class: bi bi-cpu
-      title: '[智能處理]'
-      description: '[描述您產品的第一個主要優勢或功能特點]'
+      title: "[Smart Processing]"
+      description: "[Describe your product's first major advantage or feature]"
     - icon_class: bi bi-rocket-takeoff
-      title: '[快速部署]'
-      description: '[描述您產品的第二個主要優勢或功能特點]'
+      title: "[Rapid Deployment]"
+      description: "[Describe your product's second major advantage or feature]"
     - icon_class: bi bi-shield-lock
-      title: '[安全可靠]'
-      description: '[描述您產品的第三個主要優勢或功能特點]'
+      title: "[Secure & Reliable]"
+      description: "[Describe your product's third major advantage or feature]"
     cta_buttons:
     - class: btn btn-primary btn-lg me-3
       link: /app
-      text: '[主要行動按鈕]'
+      text: "[Primary Action Button]"
       icon: bi bi-play-circle
     - class: btn btn-outline-primary btn-lg
       link: /app
-      text: '[次要行動按鈕]'
+      text: "[Secondary Action Button]"
       icon: bi bi-info-circle
   pricing:
     section_id: pricing
-    title: '[選擇您的方案]'
-    feature_icon: fas fa-check
+    title: "[Choose Your Plan]"
+    feature_icon: bi bi-check-circle
     plans:
-    - name: '[免費方案]'
+    - name: "[Free Plan]"
       is_popular: false
-      price: $0
-      price_period: /月
-      ai_quota: '[方案限制說明]'
+      price: "$0"
+      price_period: "/month"
+      ai_quota: "[Plan limitation description]"
       features:
-      - '[功能項目1]'
-      - '[功能項目2]'
-      - '[功能項目3]'
+      - "[Feature item 1]"
+      - "[Feature item 2]"
+      - "[Feature item 3]"
       button:
-        link: '#'
+        link: "#"
         class: btn btn-outline-primary w-100
-        text: '[免費開始]'
-    - name: '[基礎方案]'
+        text: "[Get Started Free]"
+        icon: bi bi-download
+    - name: "[Basic Plan]"
       is_popular: true
-      price: $[價格]
-      price_period: /月
-      ai_quota: '[方案限制說明]'
+      price: "$[Price]"
+      price_period: "/month"
+      ai_quota: "[Plan limitation description]"
       features:
-      - '[功能項目1]'
-      - '[功能項目2]'
-      - '[功能項目3]'
-      - '[功能項目4]'
+      - "[Feature item 1]"
+      - "[Feature item 2]"
+      - "[Feature item 3]"
+      - "[Feature item 4]"
       button:
-        link: '#'
+        link: "#"
         class: btn btn-primary w-100
-        text: '[立即升級]'
-      popular_badge_text: 最受歡迎
-    - name: '[進階方案]'
+        text: "[Upgrade Now]"
+        icon: bi bi-arrow-up-circle
+      popular_badge_text: "Most Popular"
+      popular_badge_class: badge bg-success
+    - name: "[Premium Plan]"
       is_popular: false
-      price: $[價格]
-      price_period: /月
-      ai_quota: '[方案限制說明]'
+      price: "$[Price]"
+      price_period: "/month"
+      ai_quota: "[Plan limitation description]"
       features:
-      - '[功能項目1]'
-      - '[功能項目2]'
-      - '[功能項目3]'
-      - '[功能項目4]'
-      - '[功能項目5]'
+      - "[Feature item 1]"
+      - "[Feature item 2]"
+      - "[Feature item 3]"
+      - "[Feature item 4]"
+      - "[Feature item 5]"
       button:
-        link: '#'
+        link: "#"
         class: btn btn-outline-primary w-100
-        text: '[立即升級]'
+        text: "[Upgrade Now]"
+        icon: bi bi-star
   faq:
-    title: '[常見問題]'
+    title: "[Frequently Asked Questions]"
     faq_items:
-    - question: '[問題1：關於產品的基本問題？]'
-      answer: '[在此回答使用者最常問的第一個問題，提供清楚詳細的說明...]'
-    - question: '[問題2：關於技術或使用方面的問題？]'
-      answer: '[在此回答技術相關問題，幫助使用者理解產品的技術優勢...]'
-    - question: '[問題3：關於定價或商業模式的問題？]'
-      answer: '[在此說明定價策略和商業模式，讓使用者了解價值主張...]'
-    - question: '[問題4：關於支援或服務的問題？]'
-      answer: '[在此說明客戶支援和服務內容，建立使用者信心...]'
+    - question: "[Question 1: Basic question about the product?]"
+      answer: "[Answer the first most common question users ask, providing clear and detailed explanation...]"
+    - question: "[Question 2: Technical or usage-related question?]"
+      answer: "[Answer technical questions here, helping users understand the product's technical advantages...]"
+    - question: "[Question 3: Pricing or business model question?]"
+      answer: "[Explain pricing strategy and business model here, helping users understand the value proposition...]"
+    - question: "[Question 4: Support or service-related question?]"
+      answer: "[Explain customer support and service content here, building user confidence...]"
