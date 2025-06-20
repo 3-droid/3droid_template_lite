@@ -1,4 +1,4 @@
-# MicroSaaS Free Version Quick Start Guide
+# MicroSaaS Community Version Quick Start Guide
 
 ## Step 1: Download and Install Project
 
